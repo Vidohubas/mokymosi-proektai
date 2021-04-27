@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+ 
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta name='author' content='Musu grupe'>
+
+        <title>papildoma_uzduotis_grid</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+           
+            .col-1 {
+                width: 8.33%;
+            }
+            .col-2 {
+                width: 16.66%;
+            }
+            .col-3 {
+                width: 25%;
+            }
+            .col-4 {
+                width: 33.33%;
+            }
+            .col-5 {
+                width: 41.66%;
+            }
+            .col-6 {
+                width: 50%;
+            }
+            .col-7 {
+                width: 58.33%;
+            }
+            .col-8 {
+                width: 66.66%;
+            }
+            .col-9 {
+                width: 75%;
+            }
+            .col-10 {
+                width: 83.33%;
+            }
+            .col-11 {
+                width: 91.66%;
+            }
+            .col-12 {
+                width: 100%;
+            }
+
+            [class*="col-"] {
+            float: left;
+            padding: 15px;
+            border: 1px solid red;
+            box-shadow: 
+
+                1px 0 0 0 red, 
+
+                0 1px 0 0 red, 
+
+                1px 1px 0 0 red,
+
+                1px 0 0 0 red inset, 
+
+                0 1px 0 0 red inset;
+            }
+          
+           }
+           @media all and (max-width: 720px) {
+                [class*="col-"] {
+                float: left;
+                width: 100%;
+                }
+            }
+
+            h1{
+               color: yellow;
+               size: 48px;
+           }
+           p{
+               font-size: 12px;
+               color: darkgray;
+           }
+
+           .img{
+               width: 300px;
+               height: 100px;
+           }
+
+            body{
+                width: 80%;
+                margin: 0 auto;
+                display: block;
+               
+            }
+
+
+            .clearfix {
+                overflow: auto;
+                max-width: 100%;
+                
+            }
+
+            #main-heading {
+                color:grey;
+            }
+
+            #u-paragraph {
+                color: red;
+            }
+
+            .row {
+                background-color:rgb(39, 163, 153);
+                width: 100%;
+                color: rgb(31, 29, 138);
+            }
+
+            .col {
+                float:left;
+                width: 100%;
+                
+            }
+
+            .pirma {
+                background-color: rgb(199, 127, 20);
+               
+            }
+
+            .antra {
+                background-color: rgb(0, 255, 21);
+               
+            }
+            .eilute1 {
+                width: 100%;
+              
+            }
+            .eilute2{
+                width: 50%;
+                float: left;
+               
+            }
+            .eilute3{
+                width: 70%;
+                
+            }
+            .eilute31{
+               width: 30%;
+               display:flex;
+               flex-direction: column; 
+            }
+          
+           .eilute4{
+                width: 33.33%;
+               text-align: center;
+                margin: 0 auto;
+           }
+
+            .simbols{
+               list-style: none;
+               padding: 0;
+               margin: 5vw;
+           }
+           
+        </style>
+
+    </head>
+
+
+    <body>
+
+        <div class='container'>
+            <h1>Grid demo </h1>
+            <div class='row'>
+                <div class='col-12'> 
+                    <div class='eilute1' >
+                        <div class='row clearfix'>
+                            <div class='col pirma'>
+                                <div p>Stulpelis</p><br>
+                                    <p>Stulpelis</p><br>
+                                    <p>Stulpelis</p><br>
+                                    <p>Stulpelis</p><br>
+                                    <p>Stulpelis</p>     
+                                </div>
+                                <div class='col antra'>
+                                    <p>Stulpelis</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='col-6'>  
+                    <h1 id='main-heading'>Minimali struktura</h1>
+                        <div class='eilute2 col clearfix'>
+                            <h1>This is a Heading</h1>
+                            <h2>This is a Heading</h2>
+                            <h2>This is a Heading</h2>
+                            <h3>This is a Heading</h3>
+                            <h4>This is a Heading</h4>
+                            <h5>This is a Heading</h5>
+                            <h6>This is a Heading</h6>
+                            <p>Tekstas su zyma p</p>
+                        </div>  
+                </div>
+
+                <div class='col-6'>  
+                    <div class='eilute2 col clearfix'>
+                            <p>Vivamus magna justo, lacinia eget consectetur sed, 
+                        convallis at tellus. <br> Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. 
+                        Nulla quis lorem ut libero malesuada feugiat. 
+                        Nulla quis lorem ut libero malesuada feugiat. 
+                        Vestibulum ante ipsum primis in faucibus orci luctus et 
+                        ultrices posuere cubilia Curae; Donec velit neque, 
+                        auctor sit amet aliquam vel, ullamcorper sit amet ligula. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Quisque velit nisi, pretium ut lacinia in, elementum id enim. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
+                        Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+                    </div> 
+                </div>
+            </div>
+
+            <div class='row'>
+                    <div class='col-8'> 
+                        <div class='eilute3  col clearfix '>
+                            <img class='img' src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogodownload.org%2Fwp-content%2Fuploads%2F2014%2F09%2Fgoogle-logo-1.png&f=1&nofb=1' alt='Pirmas paveiksliukas' width='500' height='250'>
+                            <img class='img' src='img/pirmas_paveiksliukas.jpg' alt='Antras paveiksliukas' width='500' heigth='250'>
+                        </div>
+                    </div>
+
+                    <div class='col-4'> <div class='eilute31 col clearfix'>
+                        <img class='img' src='img/trecias_paveikslelis.jpg' alt='trecias paveiksleis' width='100' height='100'>
+                    
+                        <span>Tekstas su zyma span</span>
+                    </div>
+            </div>
+
+            <div class='row'>
+                <div class='col-4'> 
+                    <div class='eilute4 col '>
+                        <h1>Antra paskaita</h1>
+                        <a href='https://google.lt' target='_blank'>Einame i Google Naujas Tab'as</a><br>
+                        <a href='https://google.lt'>Einame i Google Be Naujo Tab'o</a><br>
+                        <a href='about.html'>Einame i vidini about.html puslapi be naujo tabo</a><br>
+                        <a href='about.html' target='_blank'>Einame i vidini about.html puslapi su nauju tab</a><br>    
+                    </div>
+                </div>
+
+                <div class='col-4'>
+                    <div class='eilute4 col clearfix '>
+                        <ol class='simbols'>
+                            <li>
+                                <a href='https://google.lt' target='_blank'>Einame i Google Naujas Tab'as</a>
+                            </li>
+                            <li>Cukrus</li>
+                            <li>Limonadas</li>
+                            <li>Svoguno</li>   
+                        </ol>
+                    </div>
+                </div>
+
+                <div class='col-4'> 
+                    <div class='eilute4 col clearfix'>
+                        <ul class='simbols'>
+                            <li>Druska</li>
+                            <li>Cukrus</li>
+                            <li><a href='about.html' target='_blank'>Einame i vidini about.html puslapi su nauju tab</a></li>
+                            <li>Svoguno</li>   
+                        </ul>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
