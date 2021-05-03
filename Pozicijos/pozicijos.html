@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        .container {
+            width:100%;
+            /* position: relative; */
+            background-color:silver;
+        }
+
+        .container-1 {
+            width:100%;
+            height: 300px;
+            background-color: blue;
+        }
+
+        .textblock {
+            height: 600px;    
+        }
+
+        .clearfix {
+            overflow: auto;
+        }
+
+        .bottom {
+            font-size:60px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .big-container {
+            position:absolute;
+            top: 100px;
+            width: 100%;
+        }
+
+        .big-container-1 {
+            position: relative;
+            width: 100%;
+            background-color: gold ;
+            height: 800px;
+        }
+
+        .kvadratelis {
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .header, .main, .footer {
+            float:left;
+            width:100%;
+        }
+
+        .header {
+            background-color:honeydew;
+            height: 200px;
+            position: fixed;
+        }
+
+        .main {
+            margin-top: 200px;
+            background-color: pink;
+            height: 1500px;
+        }
+
+        .footer {
+            background-color:khaki;
+            height: 200px;
+        }
+        body {
+            margin:0 auto;
+        }
+
+        p {
+            text-align:center;
+            font-size: 24px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- CTRL + / -->    
+
+<!-- dvejos absoliucios pozicijos -->
+<!-- <div class='big-container'>
+        <div class='container clearfix'>
+            <div class='textblock'>
+                <div class='antraste'>Antraste</div>
+                <div class='tekstas'>Tekstas Tekstas Tekstas Tekstas Tekstas Tekstas Tekstas</div>
+                <div class='tekstas bottom'>X</div>
+            </div>
+        </div>
+</div> -->
+
+
+<!-- Centravimas su absolute -->
+<!-- <div class='big-container-1'>
+    <div class='kvadratelis'></div>
+</div> -->
+
+<div class='container'>
+    <div class='header'></div>
+    <div class='main'>
+        <p>pavyzdys</p>
+    </div>
+    <div class='footer'>
+        <p>&#169 Vidas Gaidelis</p>
+        <p class='year'>
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+        </p>
+    </div>
+</div>
+
+<!-- <script>
+document.querySelector('.year').innerText = new Date().getFullYear();
+</script> -->
+
+
+</body>
+</html>
