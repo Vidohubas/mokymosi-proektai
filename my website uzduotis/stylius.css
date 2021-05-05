@@ -108,7 +108,7 @@ html {
     line-height: 26.4px;
   }
 
-  h1{
+  .open-sans h1{
     font-family: "Open Sans" ;
     font-size: 2rem;
     font-style: normal;
@@ -116,6 +116,15 @@ html {
     font-weight: 700;
     line-height: 26.4px;    
     }
+
+    .open-sans h2{
+      font-family: "Open Sans";
+      font-size: 1.16rem;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 700;
+      line-height: 12.4px;
+      }
 
     .open-sans h3 {
     font-family: "Open Sans";
@@ -128,7 +137,7 @@ html {
 
     .open-sans h5 {
     font-family: "Open Sans";
-    font-size: 2rem;
+    font-size: 1rem;
     font-style: normal;
     font-variant: normal;
     font-weight: 700;
@@ -141,7 +150,7 @@ html {
     font-style: normal;
     font-variant: normal;
     font-weight: 400;
-    line-height: 21.4px;
+    line-height: 24.4px;
     }
 
   
@@ -227,7 +236,7 @@ html {
 @media all and (max-width: 720px) {
 
   html {
-      font-size: 1.75rem;
+      font-size: 1.16rem;
   }
 
   .header h1{
