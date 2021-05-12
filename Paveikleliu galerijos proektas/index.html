@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerija</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js'></script>
+
+    <style>
+        img {
+            width:100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .grid-item:nth-child(odd) > img {
+            height:500px;
+        }
+
+        .grid-gutter-sizer {
+            width: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class='container'>
+
+        <div class='sort-by-button-group button-group'>
+            <button class='btn btn-outline-primary' data-sort-value='title' data-sort-direction='asc'>A-Z</button>
+            <button class='btn btn-outline-primary' data-sort-value='title' data-sort-direction='desc'>Z-A</button>
+            <button class='btn btn-primary' data-sort-value='random' data-sort-direction='desc'>Random</button>
+        </div>
+
+        <div class='row grid'>
+            <div class='col-md-6 grid-sizer'></div>
+            <div class='grid-gutter-sizer'></div>
+        </div>
+               
+    </div>
+<script>
+    
+            fetch("https://api.unsplash.com/photos/?client_id=PWtW0jywvB5wQVFTKFyqnSaWBK9ZibsAJcWho0VSNWY&page=2")
+        .then(res => res.json())
+        .then(data => {
+           
+
+                for(var i = 0; i < data.length; i++ ) {
+                    console.log(data[i].urls.regular);
+                    
+                     //pavadinimo atvaizdavimas
+
+                     var pElement = document.createElement('p');
+                    pElement.classList.add('title');
+
+                    if(!data[i].alt_description) {
+                        pElement.innerText = 'Nėra aprašymo';
+                    } else {
+                        pElement.innerText = data[i].alt_description;
+                    }
+                    
+                    //susikuriama paveiksliuka
+                    
+                    var imageElement = document.createElement('img');
+                    imageElement.src = data[i].urls.regular;
+
+                    //susikuriame div
+                    var divElement = document.createElement('div');
+                    divElement.classList.add('col-md-6');
+                    divElement.classList.add('grid-item');
+
+                    //prie div prikabiname img ir p
+                    divElement.append(imageElement);
+                    divElement.append(pElement);
+
+                    //div prikabiname prie grid
+                    document.querySelector('.grid').append(divElement);
+                   
+                }
+                
+                var iso = new Isotope('.grid',{
+                    itemSelector: '.grid-item',
+                    stagger: 30,
+                    getSortData: {
+                        title: '.title'
+                    },
+                    masonry: {
+                        columnWidth: '.grid-sizer',
+                        gutter: '.grid-gutter-sizer'
+                    },
+
+                    sortBy: 'title',
+                    sortAscending: true
+                });
+
+                var sortByGroup = document.querySelector('.sort-by-button-group');
+                sortByGroup.addEventListener('click', function( event ){
+                    
+                    if(!matchesSelector(event.target,'.btn')) {
+                        return;
+                    }
+                    
+                    var sortValue = event.target.getAttribute('data-sort-value');
+                    var sortDirection = event.target.getAttribute('data-sort-direction');
+                    var isAscending = (sortDirection == 'asc') ;// true, false
+
+                    iso.arrange({
+                        sortBy: sortValue,
+                        sortAscending: isAscending
+                    });
+
+                     // if(typeof tekstas == 'undefined')
+
+                    console.log(sortValue);
+                    console.log(sortDirection);
+                    console.log(isAscending);
+                });
+            }
+        );
+</script>     
+</body>
+</html>

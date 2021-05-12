@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerija</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js'></script>
+
+    <style>
+        img {
+            width:100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .grid-item:nth-child(odd) > img {
+            height:500px;
+        }
+
+        .grid-gutter-sizer {
+            width: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='sort-by-button-group button-group'>
+            <button class='btn btn-outline-primary' data-sort-value='title' data-sort-direction='asc'>A-Z</button>
+            <button class='btn btn-primary' data-sort-value='title' data-sort-direction='desc'>Z-A</button>
+            <button class='btn btn-primary' data-sort-value='random' data-sort-direction='desc'>Random</button>
+        </div>
+        <div class='row grid'>
+            <div class='col-md-6 grid-sizer'></div>
+            <div class='grid-gutter-sizer'></div>
+        </div>
+    
+    </div>
+    <script>
+
+        //Salygos sakinys
+
+        // var skaicius = 9;
+        // var tekstas = 'tekstas';
+        
+        // >
+        // <
+        // >=
+        // <=
+        // ==
+        // !=
+        // if(tekstas == '') {
+        //     console.log('Tkestas tuscias');
+        // } else {
+        //     console.log(tekstas);
+        // }
+
+        // if(skaicius > 8) {
+        //     console.log('Skaicius yra didesnis nei 8');
+        // }
+
+        // const konstanta='3.141';
+
+        // let kintamasis;
+
+        // var kintamasis;
+
+        // var zmogus = {
+        //     'vardas': 'Vardenis',
+        //     'pavarde': 'Pavardenis',
+        //     'kodas': 35856,
+        //     'apibudinmas': ['aukstas', 'turtingas', 'nemoka siuti']
+        // };
+
+        // var zmogus1 = {
+        //     'vardas': 'Vardenis1',
+        //     'pavarde': 'Pavardenis1',
+        //     'kodas': 35855,
+        //     'apibudinmas': ['zemas', 'turtingas', 'moka siuti']
+        // };
+
+        // console.log(zmogus.vardas);
+        // console.log(zmogus1.pavarde);
+
+        // var grupe;
+
+        // grupe = [zmogus, zmogus1];
+
+        // for(var i = 0; i < grupe.length; i++ ) {
+        //     console.log(grupe[i].vardas)
+        // }
+        
+        // console.log(grupe);
+
+        // var x = 1;
+
+        // var masyvas;
+        // var informacija = '';
+
+        // masyvas = {
+        //     "image1": "https://images.unsplash.com/photo-1587554801471-37976a256db0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MXwxfGFsbHwxfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+        //     "image2": "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+        //     "image3": "https://images.unsplash.com/photo-1587554801471-37976a256db0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MXwxfGFsbHwxfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+        //     "image4": "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+        //     "urls": [
+        //      "https://images.unsplash.com/photo-1587554801471-37976a256db0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MXwxfGFsbHwxfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+        //     "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+        //     "https://images.unsplash.com/photo-1587554801471-37976a256db0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MXwxfGFsbHwxfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+        //     "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+        //     "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+        //     "https://images.unsplash.com/photo-1587554801471-37976a256db0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MXwxfGFsbHwxfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+        //     "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+        //     "https://images.unsplash.com/photo-1587554801471-37976a256db0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MXwxfGFsbHwxfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+        //     "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080",
+        //     "https://images.unsplash.com/photo-1620440622908-402fd7b8be66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjk1MTl8MHwxfGFsbHwzfHx8fHx8Mnx8MTYyMDYzMTg4Mg&ixlib=rb-1.2.1&q=80&w=1080"         
+        // ],
+        
+        // };
+
+        // var url;
+
+        // url = masyvas.urls[3];
+
+        // console.log(url);
+
+
+        // for(var i = 0; i < masyvas.urls.length; i++ ) {
+
+        //     //  console.log(masyvas.urls[i]);
+
+        //      var imageElement = document.createElement('img');
+        //      imageElement.src = masyvas.urls[i];
+        //      document.querySelector('.container').append(imageElement);
+
+        // }
+
+        // informacija = masyvas.image2;
+
+        // var imageElement = document.createElement('img');
+        // imageElement.src = masyvas.image1;
+        // document.querySelector('.container').append(imageElement);
+
+        // var imageElement1 = document.createElement('img');
+        // imageElement1.src = masyvas.image2;
+        // document.querySelector('.container').append(imageElement1);
+
+        // var imageElement2 = document.createElement('img');
+        // imageElement2.src = masyvas.image3;
+        // document.querySelector('.container').append(imageElement2);
+
+        // var imageElement3 = document.createElement('img');
+        // imageElement3.src = masyvas.image4;
+        // document.querySelector('.container').append(imageElement3);
+        
+
+        // console.log(informacija);
+
+        // console.log(masyvas);
+
+
+
+        fetch("https://api.unsplash.com/photos/?client_id=BL6GxFw6TnTjKO9HAs5vlTSJDcttPRei0pK1H2eUM4c&page=2")
+        .then(res => res.json())
+        .then(data => {
+                for(var i = 0; i < data.length; i++ ) {
+                    //console.log(data[i].urls.regular);
+                    
+                    //pavadinimo atvaizdavimas
+
+                    var pElement = document.createElement('p');
+                    pElement.classList.add('title');
+
+                    if(!data[i].alt_description) {
+                        pElement.innerText = 'Aprasymas yra tuscias';
+                    } else {
+                        pElement.innerText = data[i].alt_description;
+                    }
+
+                    
+                    //susikuriama paveiksliuka
+                    
+                    var imageElement = document.createElement('img');
+                    imageElement.src = data[i].urls.regular;
+
+                    //susikuriame div
+                    var divElement = document.createElement('div');
+                    divElement.classList.add('col-md-6');
+                    divElement.classList.add('grid-item');
+
+                    //prie div prikabiname img ir p
+                    divElement.append(imageElement);
+                    divElement.append(pElement);
+
+                    //div prikabiname prie grid
+                    document.querySelector('.grid').append(divElement);
+                   
+                }
+                
+                var iso = new Isotope('.grid',{
+                    itemSelector: '.grid-item',
+                    stagger: 30,
+                    getSortData: {
+                        title: '.title'
+                    },
+                    masonry: {
+                        columnWidth: '.grid-sizer',
+                        gutter: '.grid-gutter-sizer'
+                    },
+
+                    sortBy: 'title',
+                    sortAscending: true
+                });
+
+
+                var sortByGroup = document.querySelector('.sort-by-button-group');
+                sortByGroup.addEventListener('click', function( event ){
+                    
+                    if(!matchesSelector(event.target,'.btn')) {
+                        return;
+                    }
+                    
+                    var sortValue = event.target.getAttribute('data-sort-value');
+                    var sortDirection = event.target.getAttribute('data-sort-direction');
+                    var isAscending = (sortDirection == 'asc') ;// true, false
+
+                    iso.arrange({
+                        sortBy: sortValue,
+                        sortAscending: isAscending
+                    });
+
+                   // if(typeof tekstas == 'undefined')
+
+                    console.log(sortValue);
+                    console.log(sortDirection);
+                    console.log(isAscending);
+                });
+
+            }
+        );
+    </script>
+</body>
+</html>
