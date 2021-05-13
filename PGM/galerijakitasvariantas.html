@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .grid-gutter-sizer {
+            width: 0;
+        }
+
+        .grid-item:nth-child(odd) > img {
+            height: 500px;
+        }
+
+        /* .grid-item:nth-child(even) { */
+            /* height: 500px; */
+        /* } */
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class='container'>
+        <div class='button-group sort-by-button-group'>
+            <button type='button' class='btn btn-outline-primary' data-sort-value='title'
+                data-sort-direction='asc'>A-Z</button>
+            <button type='button' class='btn btn-outline-primary' data-sort-value='title'
+                data-sort-direction='desc'>Z-A</button>
+        </div>
+        <div class='grid'>
+            <div class='col-md-6 grid-sizer'></div>
+            <div class="grid-gutter-sizer"></div>
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
+    <script src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js'></script>
+
+    <script>
+
+        let sortByGroup = document.querySelector('.sort-by-button-group');
+        sortByGroup.addEventListener('click', function (event) {
+            // only button clicks
+            if (!matchesSelector(event.target, '.btn')) {
+                return;
+            }
+            let sortValue = event.target.getAttribute('data-sort-value');
+            let sortDirection = event.target.getAttribute('data-sort-direction');
+            let isAscending = (sortDirection == 'asc');
+
+            iso.arrange({ sortBy: sortValue, sortAscending: isAscending });
+        });
+
+        let iso = new Isotope('.grid', {
+            itemSelector: '.grid-item',
+            stagger: 30,
+            getSortData: {
+                title: '.title'
+            },
+            masonry: {
+                // use outer width of grid-sizer for columnWidth
+                columnWidth: '.grid-sizer',
+                gutter: '.grid-gutter-sizer'
+            },
+
+            sortBy: 'title',
+            sortAscending: true,
+
+            // nicer reveal transition
+            visibleStyle: { transform: 'translateY(0)', opacity: 1 },
+            hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
+
+        });
+
+
+        const unsplashID = '';
+
+        let infScroll = new InfiniteScroll('.grid', {
+            path: function () {
+                return `https://api.unsplash.com/photos?client_id=${unsplashID}&page=${this.pageIndex}`;
+            },
+            // load response as JSON
+            responseBody: 'json',
+            outlayer: iso,
+            history: false,
+        });
+
+        // // use element to turn HTML string into elements
+        let proxyElem = document.createElement('div');
+
+        infScroll.on('load', function (body) {
+            // compile body data into HTML
+            let itemsHTML = body.map(getItemHTML).join('');
+            // convert HTML string into elements
+            proxyElem.innerHTML = itemsHTML;
+            // append item elements
+            let items = proxyElem.querySelectorAll('.grid-item');
+            imagesLoaded(items, function () {
+                infScroll.appendItems(items);
+                iso.appended(items);
+            });
+        });
+
+        // load initial page
+        infScroll.loadNextPage().then(function( loaded ) {
+              let { response, body, items } = loaded;
+            console.log( body );
+        } );
+
+        // //------------------//
+
+        function getItemHTML({ user, urls, alt_description }) {
+            return `<div class='grid-item col-md-6'>
+        <img src='${urls.regular}' alt='Photo by ${alt_description}' />
+        <p class='title'>
+        ${user.name}
+        </p>
+    </div>`;
+        }
+
+
+         fetch('https://api.unsplash.com/photos?client_id=&page=1')
+             .then(res => res.json())
+             .then(data => console.log(data));
+    </script>
+</body>
+
+
+
+</html>
