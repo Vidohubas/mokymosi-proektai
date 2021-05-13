@@ -30,13 +30,26 @@
             width: 0;
         }
 
+        h1{
+            text-align: center;
+            font-size: 42px;
+            color: blue;
+        }
+
+        .p1{
+            text-align: start;
+            font-size: 22px;
+            color: cornflowerblue;
+        }
     </style>
 
 </head>
 <body>
 
-    <div class='container'>
+    <h1>Foto Galerija</h1>
 
+    <div class='container'>
+        <p class="p1">Nuotraukų rūšiavimas</p>
         <div class='sort-by-button-group button-group'>
             <button class='btn btn-outline-primary' data-sort-value='title' data-sort-direction='asc'>A-Z</button>
             <button class='btn btn-outline-primary' data-sort-value='title' data-sort-direction='desc'>Z-A</button>
@@ -51,60 +64,84 @@
     </div>
 <script>
     
-            fetch("https://api.unsplash.com/photos/?client_id=&page=2")
-        .then(res => res.json())
-        .then(data => {
-           
+    var iso;
+        var pages = 1;
 
-                for(var i = 0; i < data.length; i++ ) {
-                    console.log(data[i].urls.regular);
-                    
-                     //pavadinimo atvaizdavimas
+        loadImages(pages);//1
 
-                     var pElement = document.createElement('p');
-                    pElement.classList.add('title');
+        function loadImages(page) {        
+        fetch("https://api.unsplash.com/photos/?client_id=PWtW0jywvB5wQVFTKFyqnSaWBK9ZibsAJcWho0VSNWY&page=" + page)
+                .then(res => res.json())
+                .then(data => {
+                        for(var i = 0; i < data.length; i++ ) {
+                            //console.log(data[i].urls.regular);
+                            
+                            //pavadinimo atvaizdavimas
 
-                    if(!data[i].alt_description) {
-                        pElement.innerText = 'Nėra aprašymo';
-                    } else {
-                        pElement.innerText = data[i].alt_description;
+                            var pElement = document.createElement('p');
+                            pElement.classList.add('title');
+
+                            if(!data[i].alt_description) {
+                                pElement.innerText = 'Aprasymas yra tuscias';
+                            } else {
+                                pElement.innerText = data[i].alt_description;
+                            }
+
+                            
+                            //susikuriama paveiksliuka
+                            
+                            var imageElement = document.createElement('img');
+                            imageElement.src = data[i].urls.regular;
+
+                            //susikuriame div
+                            var divElement = document.createElement('div');
+                            divElement.classList.add('col-md-6');
+                            divElement.classList.add('grid-item');
+
+                            //prie div prikabiname img ir p
+                            divElement.append(imageElement);
+                            divElement.append(pElement);
+
+                            //div prikabiname prie grid
+                            document.querySelector('.grid').append(divElement);
+                        
+                        }
+                        
+                            iso = new Isotope('.grid',{
+                            itemSelector: '.grid-item',
+                            stagger: 30,
+                            getSortData: {
+                                title: '.title'
+                            },
+                            masonry: {
+                                columnWidth: '.grid-sizer',
+                                gutter: '.grid-gutter-sizer'
+                            },
+
+                            sortBy: 'title',
+                            sortAscending: true
+                        });
+
+
                     }
-                    
-                    //susikuriama paveiksliuka
-                    
-                    var imageElement = document.createElement('img');
-                    imageElement.src = data[i].urls.regular;
-
-                    //susikuriame div
-                    var divElement = document.createElement('div');
-                    divElement.classList.add('col-md-6');
-                    divElement.classList.add('grid-item');
-
-                    //prie div prikabiname img ir p
-                    divElement.append(imageElement);
-                    divElement.append(pElement);
-
-                    //div prikabiname prie grid
-                    document.querySelector('.grid').append(divElement);
-                   
+                );
+        }
+        
+        window.addEventListener('scroll', function(){
+            var pozicija = window.scrollY + window.innerHeight;
+            if(pozicija >= document.body.offsetHeight) {
+                if(pages < 9) {
+                    console.log('Puslapio pabaiga');
+                    pages++;
+                    console.log(pages);
+                    loadImages(pages);
                 }
-                
-                var iso = new Isotope('.grid',{
-                    itemSelector: '.grid-item',
-                    stagger: 30,
-                    getSortData: {
-                        title: '.title'
-                    },
-                    masonry: {
-                        columnWidth: '.grid-sizer',
-                        gutter: '.grid-gutter-sizer'
-                    },
+            }
 
-                    sortBy: 'title',
-                    sortAscending: true
-                });
+        });
+        
 
-                var sortByGroup = document.querySelector('.sort-by-button-group');
+        var sortByGroup = document.querySelector('.sort-by-button-group');
                 sortByGroup.addEventListener('click', function( event ){
                     
                     if(!matchesSelector(event.target,'.btn')) {
@@ -120,14 +157,13 @@
                         sortAscending: isAscending
                     });
 
-                     // if(typeof tekstas == 'undefined')
+                   // if(typeof tekstas == 'undefined')
 
                     console.log(sortValue);
                     console.log(sortDirection);
                     console.log(isAscending);
                 });
-            }
-        );
-</script>     
+        
+    </script>
 </body>
 </html>
