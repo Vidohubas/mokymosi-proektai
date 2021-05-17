@@ -7,140 +7,89 @@
     <title>Dizainas_adobexd</title>
 
     <style>
-
-        body{
-            top: 0px;
-            left: 0px;
-            width: 1920px;
-            height: 1080px;
-            background: #657AD3 0% 0% no-repeat padding-box;
-            opacity: 1;
-            
-        } 
-
-        .container{
-            display: flex;
+         html {
+            height: 100%;
         }
 
-        .item-1{
-            top: 328px;
-            left: 560px;
-            width: 320px;
-            height: 424px;
-            background: transparent url('img/mtm.png') 0% 0% no-repeat padding-box;
-            opacity: 1;
-            position: absolute;
-             
-        }
-
-        .item-2{
-            top: 298px;
-            left: 880px;
-            width: 480px;
-            height: 484px;
-            background: #FFFFFF 0% 0% no-repeat padding-box;
-            opacity: 1;
-            position: absolute;
-         
-        }
-
-        .sign{
-            top: 360px;
-            left: 600px;
-            width: 92px;
-            height: 37px;
-            text-align: left;
-            font: normal normal normal 32px/37px Gill Sans MT;
-            letter-spacing: 0px;
-            color: #FFFFFF;
-            opacity: 1;
-            
-        }
-
-        .privacy{
-            top: 708px;
-            left: 600px;
-            width: 88px;
-            height: 19px;
-            text-align: left;
+        body {
+            max-width: 800px;
+            min-height: 100%;
+            margin: 0 auto;
+            position: relative;
+            background-color: #657AD3;
             font: normal normal normal 16px/19px Gill Sans MT;
-            letter-spacing: 0px;
-            color: #FFFFFF;
-            opacity: 1;
         }
 
-        .and{
-            top: 708px;
-            left: 693px;
-            width: 10px;
-            height: 19px;
-            text-align: left;
-            font: normal normal normal 16px/19px Gill Sans MT;
-            letter-spacing: 0px;
-            color: #FFFFFF;
-            opacity: 1;
-        }
-
-        .terms{
-            top: 708px;
-            left: 707px;
-            width: 105px;
-            height: 19px;
-            text-align: left;
-            font: normal normal normal 16px/19px Gill Sans MT;
-            letter-spacing: 0px;
-            color: #FFFFFF;
-            opacity: 1;
-        }
-
-        .username{
-            top: 344px;
-            left: 940px;
-            width: 65px;
-            height: 15px;
-            text-align: left;
-            font: normal normal normal 13px/15px Gill Sans MT;
-            letter-spacing: 0px;
-            color: #000000;
-            opacity: 1;
-        }
-
-        @media screen (max-width: 820px){
-            
-            .container{
-                
+        .container {
             width: 100%;
-            }
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
         }
-        
-            
+
+        .left-column, .right-column {
+            float:left;
+            height: 484px;
+        }
+
+        .left-column {
+            width: 40%;
+            background-color: transparent;
+        }
+
+        .right-column {
+            width: 60%;
+            background-color: #FFFFFF ;
+        }
+
+        .left-column-container {
+            display: block;
+            height: 424px;
+            background-color: red;
+            margin-top: 30px;
+            background: transparent url('img/kalnai.png') 0% 0% no-repeat padding-box;
+            background-size: cover;
+            padding-left: 40px;
+            position:relative;
+        }
+
+        h1 {
+            font: normal normal normal 32px/37px Gill Sans MT;
+            color: #FFFFFF;
+            margin: 0;
+            padding-top: 32px;
+        }
+
+        p, a {
+            display: inline-block;
+            font: normal normal normal 16px/19px Gill Sans MT;
+            color: #FFFFFF;
+            margin: 0; 
+        }
+
+        .links {
+            position: absolute;
+            bottom: 25px;
+        }
+
         
     </style>
 </head>
 <body>
     <div class='container '>
-        <div class='row '>
-            <div class='item-1'> 
-                <p class='sign'>Sign up</p>
-                <a class='privacy'>Privacy policy</a>
-                <p class='and'>&</p>
-                <a class='terms'>terms of service</a>
-            </div>
-            <div class='item-2'>
-
-                <form action="/action_page.php">
-                <labe  for='fname'>USERNAME:</label><br>
-                <input  type="text" id="fname" name="fname" value='Enter your username'><br><br>
-                <label for="lname">E-MAIL:</label><br>
-                <input type="text" id="lname" name="lname" value='Enter your E-mail'><br><br>
-                <label for="lname">PASSWORD:</label><br>
-                <input type="text" id="lname" name="lname" value='Enter your E-mail'><br><br>
-                <label for="lname">REPEAT PASSWORD:</label><br>
-                <input type="text" id="lname" name="lname" value='Enter your password'><br><br>
-                <input type="submit" value="Submit">
-                </form>
+        <div class='left-column'>
+            <div class='left-column-container'>
+                <h1>Sign up</h1>
+            
+                <div class='links'>
+                    <a href='#'>Privacy policy</a>
+                    <p>&</p>
+                    <a href='#'>terms of service</a>
+                </div>
             </div>
         </div>
+        <div class='right-column'>Test</div>
+        
     </div>
 
 </body>

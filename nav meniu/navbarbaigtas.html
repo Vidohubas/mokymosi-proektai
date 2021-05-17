@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puslapis su navigacija</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 16px;
+        }
+        body {
+            max-width: 1920px;
+            margin: 0 auto;
+            font-family: Verdana, Arial, sans-serif;
+            line-height: 20px;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 100%;
+            margin: auto;
+        }
+        a {
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .area {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: stretch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .navbar-component {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.16), 0 2px 10px rgba(0,0,0,0.12);
+        }
+        .navbar-component > .navbar {
+            justify-content: space-between;
+        }
+        .navbar > .brand {
+            display: block;
+            font-size: 1rem;
+            color: #777;
+            margin: 22px; 
+        }
+        .navbar > .list {
+            display:flex;
+        }
+        
+        .navbar > .list > .item {
+            display: block;
+            height: 64px;
+            line-height: 64px;
+            padding-left: 22px;
+            padding-right: 22px;
+            text-transform: uppercase;
+            color: #555;
+            font-size: 0.875rem
+        }
+        .navbar > .list > .item.-link {
+            line-height: 68px;
+            color:#555;
+            border-bottom: 4px solid transparent;
+            padding-bottom: 22px;
+        }
+        .navbar > .list > .item.-link:hover {
+            color:#333;
+            border-bottom-color: #673ab7 ;
+        }
+        .navbar > .toggle > .icon,
+        .navbar > .toggle > .icon:before,
+        .navbar > .toggle > .icon:after
+        {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background-color: #555555;
+            transition: background-color 0.3s linear, transform 0.3s linear;
+        }
+        .navbar > .toggle > .icon:before,
+        .navbar > .toggle > .icon:after {
+            position: absolute;
+            content:""
+        }
+        .navbar > .toggle > .icon:before {
+            top: -8px;
+        }
+        .navbar > .toggle > .icon:after {
+            top: 8px;
+        }
+        .navbar > .toggle > .icon {
+            position: relative;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        .navbar > .toggle {
+            display:none;
+            border:0;
+            background-color: transparent;
+            cursor: pointer;
+            padding: 22px;
+        }
+        .navbar > .toggle.active > .icon {
+            background-color: transparent;
+        }
+        .navbar > .toggle.active > .icon:before {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .navbar > .toggle.active > .icon:after {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        @media all and (max-width: 786px) {
+
+            .navbar-component {
+                position: absolute;
+                width: 100%;
+            }
+
+            .area {
+                flex-direction: column;
+            }
+            .navbar > .list {
+                display:none;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            .navbar >.list.active {
+                display:flex;
+            }
+            .navbar > .list > .item {
+                width: 100%
+            }
+            .navbar > .toggle {
+                position: absolute;
+                right: 0;
+                display:block;
+            }
+            
+        }
+        .kvadratelis {
+            display:none;
+            width:200px;
+            height: 200px;
+            background-color: red;
+        }
+        .kvadratelis.aktyvus {
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='navbar-component'>
+            <div class='navbar area'>
+                <a href='#' class='brand'>Įmonė</a>
+                <nav id='navigation' class='list'>
+                    <a href='#' class='item -link'>Pagrindins</a>
+                    <a href='#' class='item -link'>Straipsniai</a>
+                    <a href='#' class='item -link'>Projektai</a>
+                    <a href='#' class='item -link'>Resursai</a>
+                    <a href='#' class='item -link'>Apie mane</a>
+                    <span class='item'>
+                        <i class='fa fa-search'></i> <!-- fontawesome icons-->
+                    </span>
+                </nav>
+                
+                <button id='hamburger' class='toggle'>
+                    <span class='icon'></span>
+                </button>
+            </div>
+        </div>
+        <div class='main'>
+            <span class='dinaminis'>Tekstas</span>
+            <span class='dinaminis1'>4</span>
+            <button onclick='on()' class='on'>Įjungti</button>
+            <button onclick='off()' class='off'>Išjungti</button>
+            <button class='onoff'>Įjungti/išjungti</button>
+            <div class='kvadratelis aktyvus apskritimas'></div>
+        </div>
+    </div>
+    <script>
+
+        console.log('Aukstis ' + document.querySelector('.navbar-component').offsetHeight + 'px');
+        // var windowWidth = document.documentElement.clientWidth;
+        // console.log('Ekrano plotis  ' + windowWidth + 'px');
+
+        var windowWidth = document.documentElement.clientWidth;
+            if(windowWidth <= '786') {
+                // console.log('Ekranas mazesnis nei 786');
+                document.querySelector('.main').style.paddingTop = document.querySelector('.navbar-component').offsetHeight + 'px';
+                // console.log('navbar komponento aukstis' + document.querySelector('.navbar-component').offsetHeight + ' ');
+            } else {
+                document.querySelector('.main').style.paddingTop = 0;
+            }
+
+
+        window.addEventListener('resize', function() {
+            var windowWidth = document.documentElement.clientWidth;
+            if(windowWidth <= '786') {
+                // console.log('Ekranas mazesnis nei 786');
+                document.querySelector('.main').style.paddingTop = document.querySelector('.navbar-component').offsetHeight + 'px';
+                // console.log('navbar komponento aukstis' + document.querySelector('.navbar-component').offsetHeight + ' ');
+            } else {
+                document.querySelector('.main').style.paddingTop = 0;
+            }
+            //console.log('Ekrano plotis  ' + windowWidth + 'px');
+        })
+
+        document.querySelector('.onoff').onclick = function() {
+            document.querySelector('.kavdratelis').classList.toggle('aktyvus');
+        }
+        //Hamburger funkcija
+        document.querySelector('.toggle').onclick = function() {
+           this.classList.toggle('active');
+           document.querySelector('.list').classList.toggle('active');
+        }
+        function on() {
+            document.querySelector('.kvadratelis').classList.add('aktyvus');
+            console.log('Įjungta');
+        }
+        function off() {
+            console.log('Išjungta');
+            // console.log(document.querySelector('.kvadratelis').classList);
+            document.querySelector('.kvadratelis').classList.remove('aktyvus');
+        }
+        var suma, sk1, sk2;
+        suma = 0;
+        sk1 = 8;
+        sk2 = 10;
+        suma = sk1 + sk2;
+        console.log(suma);
+        console.log('tekstas irasytas ranka');
+        console.log(document.querySelector('.dinaminis').innerText);
+        console.log(document.querySelector('.dinaminis1').innerText);
+        sk1 = document.querySelector('.dinaminis1').innerText; //4
+        sk2 = 5;
+        var skirtumas;
+        skirtumas = sk2 - sk1;
+        console.log('Skaicius is dizaino ' + sk1)
+        console.log(skirtumas)
+        document.querySelector('.dinaminis').innerText = skirtumas;
+    
+    </script>
+</body>
+</html>
