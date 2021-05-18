@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4_variantas</title>
+    <style>
+        html{
+            height: 100%;
+    
+        }
+
+        body {
+            max-width: 1920px;
+            max-height: 2079px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .container{
+            width: 100%;
+            margin:0 auto;
+            position: relative;
+        }
+
+        .row-1{
+            width: 1920px;
+            height: 94px;
+            background: #060606 0% 0% no-repeat padding-box;
+          
+        }
+
+        .row-2{
+            width: 1920px;
+            height: 394px;
+            background: #060606 0% 0% no-repeat padding-box;
+           
+        }
+
+        .row-3{
+            width: 1920px;
+            height: 1247px;
+            background-color:#FFFFFF 0% 0% no-repeat padding-box ;
+           
+        }
+
+        .row-4{
+            width: 1920px;
+            height: 344px;
+            background: #69779B 0% 0% no-repeat padding-box;
+        }
+
+        .row-5{
+            width: 1920px;
+            height: 344px;
+            background: #060606 0% 0% no-repeat padding-box;
+        }
+
+        .meniu{
+            width: 37px;
+            height: 20px;
+            top: 39px;
+            left: 1774px;
+            color: #FFFFFF;
+            position: absolute;
+        }
+
+        .meniu:hover{
+            cursor:pointer;
+            color: grey;
+            box-shadow: 0 4px 8px dark grey;
+        }
+        
+            @font-face {
+            font-family: 'SourceSansPro';
+            src: url("fonts/SourceSansPro.eot");
+            src:
+            url("fonts/SourceSansPro.woff") format("woff"),
+            url("fonts/SourceSansPro.otf") format("opentype"),
+            url("fonts/SourceSansPro.svg#filename") format("svg");
+            }
+
+        h1{
+            padding-top:  90px;
+            padding:  105px;
+            font-family: SourceSansPro-Black;
+            font-size: 102px;
+            font-weight:normal;
+            font-style:normal;
+            margin: 0;
+            color:#FFFFFF ;
+            position: absolute;
+        }
+
+        .youcan{
+            padding-top: 143px;
+            padding-left:  110px;
+            width: 424px;
+            height: 206px;
+            position: relative;
+              
+        }
+
+        h2{
+            font-size: 72px;
+            font-family:SourceSansPro-Black ;
+            color:#060606 ;
+        }
+
+        .writeus{
+            font-size: 72px;
+            font-family:SourceSansPro-Black ;
+            color:#F5A623 ;
+        }
+
+        .rowcontainer{
+          
+            padding-top: 47px;
+            padding-left: 108px;
+            width: 1203px;
+            height: 694px;
+            position: relative;
+          
+        }
+        
+        label {
+            display: inline-table;
+          
+            font: SourceSansPro-Black;
+            font-size: 25px;
+            color: #060606;
+            margin-bottom: 76px;
+           
+           
+         
+            
+           
+        }
+
+        .input{
+            margin-bottom: 50px;
+           
+           
+        }
+
+        input {
+            display:inline-block;
+            border: none;
+            height: 62px;
+            width: 967px;
+            background: #F8F8F8 ;
+            font-family:SourceSansPro-Black ;
+            font-size: 18px;
+           
+        }
+
+        #Typeyourmessagehere…{
+            width: 967px;
+            height: 238px;
+            background: #F8F8F8 ;
+        }
+
+        .btn {
+            font: normal normal normal 25px SourceSansPro-Black;
+            color: #FFFFFF;
+            background-color:#060606;
+            padding-top: 18px;
+            padding-left: 88px;
+            padding-right: 88px;
+            padding-bottom: 16px;
+            left: 343px;
+           
+            border: none;
+            box-shadow: 0 4px 8px darkgray;
+        }
+
+        .btn:hover {
+            cursor:pointer;
+            box-shadow: 0 4px 8px grey;
+        }
+           
+
+
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='row-1'>
+            <a class='meniu'>MENU</a>
+        </div>
+        <div class='row-2'>
+            <h1>Contact us</h1>  
+        </div>
+        <div class='row-3'>
+            <div class='youcan'>
+            <h2>You can </br> <span class='writeus'>write us</span> here</h2>
+            </div>
+            <div class='rowcontainer'>
+                <div class='input'>
+                    <label for='Name'>Name</label>
+                    <input placeholder='Name' type='text' id='Name' name='Name' />
+                </div>
+                <div class='input'>
+                    <label for='Phone no.'>Phone no.</label>
+                    <input placeholder='Phone_' type='text' id='Phone_' name='Phone_' />
+                </div>
+                <div class='input'>
+                    <label for='Email'>Email</label>
+                    <input placeholder='Email_' type='text' id='Email_' name='Email_' />
+                </div>
+                <div class='input'>
+                    <label for='Message'>Message</label>
+                    <input placeholder='Type your message here…' type='text' id='Typeyourmessagehere…' name='Type your message here…' />
+                </div>
+                <div>
+                    <button class='btn'>Send</button>
+                </div>
+            </div>
+        </div>
+        <div class='row-4'>
+            test
+        </div>
+        <div class='row-5'>
+            test
+        </div>
+    </div>
+    
+</body>
+</html>

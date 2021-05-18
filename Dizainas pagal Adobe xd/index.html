@@ -7,7 +7,7 @@
     <title>Dizainas_adobexd</title>
 
     <style>
-         html {
+          html {
             height: 100%;
         }
 
@@ -40,6 +40,7 @@
         .right-column {
             width: 60%;
             background-color: #FFFFFF ;
+            position: relative;
         }
 
         .left-column-container {
@@ -51,6 +52,13 @@
             background-size: cover;
             padding-left: 40px;
             position:relative;
+        }
+
+        .right-column-container {
+            padding-left: 60px;
+            padding-top: 46px;
+            padding-right: 60px;
+            padding-bottom: 46px;
         }
 
         h1 {
@@ -72,15 +80,90 @@
             bottom: 25px;
         }
 
+        label {
+            display:block;
+            font: normal normal normal 13px/15px Gill Sans MT;
+            color: #000000;
+            padding-bottom:12px;
+        }
+
+
+        .input {
+            margin-bottom: 33px;
+        }
+
+        input {
+            display: block;
+            border: none;
+            width: 100%;
+            padding-left: 0;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #808080;
+        }
+
+        input:focus {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #808080;
+        }
+
+        ::-webkit-input-placeholder {
+            font: normal normal normal 18px/21px Gill Sans MT;
+            color: #A9A9A9;
+        }
+
+        .btn {
+            font: normal normal normal 18px/21px Gill Sans MT;
+            color: #FFFFFF;
+            background-color: #FFC0CB;
+            border-radius: 20px;
+            padding-left: 40px;
+            padding-right:40px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: none;
+            box-shadow: 0 4px 8px darkgray;
+        }
+
+        .btn:hover {
+            cursor:pointer;
+            box-shadow: 0 4px 8px grey;
+        }
+
+        .close {
+            font: normal normal normal 30px/35px Gill Sans MT;
+            color: #000000;
+            position:absolute;
+            top: 14px;
+            right: 23px;
+        }
+
+        .close:hover{
+            cursor:pointer;
+            color: grey;
+            box-shadow: 0 4px 8px dark grey;
+
+        }
+
+        .or{
+            font: normal normal normal 18px/21px Gill Sans MT;
+            color: #000000;
+        }
+
+        .sin{
+            font: normal normal normal 18px/21px Gill Sans MT;
+            color: #00008B;
+        }
+
         
     </style>
 </head>
 <body>
-    <div class='container '>
+    <div class='container'>
         <div class='left-column'>
             <div class='left-column-container'>
                 <h1>Sign up</h1>
-            
+
                 <div class='links'>
                     <a href='#'>Privacy policy</a>
                     <p>&</p>
@@ -88,9 +171,33 @@
                 </div>
             </div>
         </div>
-        <div class='right-column'>Test</div>
-        
-    </div>
+        <div class='right-column'>
+            <div class='right-column-container'>
+                <span class='close'>x</span>
+                <div class='input'>
+                    <label for='username'>USERNAME</label>
+                    <input placeholder='Enter your user name' type='text' id='username' name='username' />
+                </div>
+                <div class='input'>
+                    <label for='email'>E-MAIL</label>
+                    <input placeholder='Enter your E-mail' type='text' id='email' name='email' />
+                </div>
+                <div class='input'>
+                    <label for='password'>PASSWORD</label>
+                    <input placeholder='Enter your password' type='text' id='password' name='password' />
+                </div>
+                <div class='input'>
+                    <label for='repeat_password'>REPEAT PASSWORD</label>
+                    <input placeholder='Enter your password' type='text' id='repeat_password' name='repeat_password' />
+                </div>
 
+                <div class='right-column-bottom-action'>
+                    <button class='btn'>Get started</button>
+                    <p class='or'>or</p>
+                    <a class='sin'href='#'>Sign in</a>  
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
