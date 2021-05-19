@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dizainas_adobexd</title>
-
+    <title>Registracija</title>
     <style>
-          html {
+
+        html {
             height: 100%;
         }
 
@@ -16,7 +16,7 @@
             min-height: 100%;
             margin: 0 auto;
             position: relative;
-            background-color: #657AD3;
+            background-color:#657AD3;
             font: normal normal normal 16px/19px Gill Sans MT;
         }
 
@@ -68,10 +68,26 @@
             padding-top: 32px;
         }
 
-        p, a {
+        .left-column p, .left-column a {
             display: inline-block;
             font: normal normal normal 16px/19px Gill Sans MT;
             color: #FFFFFF;
+            margin: 0; 
+        }
+
+        .right-column p {
+            display: inline-block;
+            font: normal normal normal 18px/21px Gill Sans MT;
+            color: #000000;
+            margin: 0;
+            padding-left: 14px ;
+        }
+
+        .right-column a {
+            display: inline-block;
+            font: normal normal normal 18px/21px Gill Sans MT;
+            color: #00008B;
+            padding-left: 24px ;
             margin: 0; 
         }
 
@@ -138,24 +154,66 @@
             right: 23px;
         }
 
-        .close:hover{
-            cursor:pointer;
-            color: grey;
-            box-shadow: 0 4px 8px dark grey;
-
+        .close:hover {
+            color:#00008B;
         }
 
-        .or{
-            font: normal normal normal 18px/21px Gill Sans MT;
-            color: #000000;
+        @media screen and (max-width: 664px) {
+            .left-column-container {
+                height: 100%;
+                padding-left: 20px;
+                margin-top: 0;
+            }
+
+            .right-column-container {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .right-column-bottom-action {
+                margin-top:50px;
+            }
+
+            .links {
+                bottom: 45px;
+            }
+
+            .or {
+                display:none !important;
+            }
         }
 
-        .sin{
-            font: normal normal normal 18px/21px Gill Sans MT;
-            color: #00008B;
+        @media screen and (max-width:500px) {
+            .btn {
+                font-size: 17px;
+            }
+
+            .left-column, .right-column {
+                width:100%
+            }
+
+            .left-column {
+                height: auto;
+            }
+
+            .links {
+                display:none;
+            }
+
+            .left-column-container {
+                background: none;
+            }
+
+            h1 {
+                padding-bottom:20px;
+            }
+
+            .or {
+                display:inline-block !important;
+            }
         }
 
-        
+
     </style>
 </head>
 <body>
@@ -194,7 +252,7 @@
                 <div class='right-column-bottom-action'>
                     <button class='btn'>Get started</button>
                     <p class='or'>or</p>
-                    <a class='sin'href='#'>Sign in</a>  
+                    <a href='#'>Sign in</a> 
                 </div>
             </div>
         </div>
