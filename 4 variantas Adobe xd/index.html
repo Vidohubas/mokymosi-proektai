@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4_variantas</title>
-    <script src="hhttps://fontawesome.com/icons/arrow-alt-right?style=light" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="hhttps://fontawesome.com/icons/arrow-alt-right?style=light">
-    <style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+   
+   <style>
         html{
             height: 100%;
            
@@ -46,6 +46,7 @@
             width: 1920px;
             height: 94px;
             background: #060606 0% 0% no-repeat padding-box;
+            position: relative;
         }
 
         .row-2{
@@ -66,9 +67,8 @@
             background: #69779B 0% 0% no-repeat padding-box;
             content: "";
             display: table;
-            clear: both;
-            position: relative;
-            margin: 0 auto;
+           
+           
            
         }
 
@@ -76,23 +76,21 @@
             width: 1920px;
             height: 344px;
             background: #060606 0% 0% no-repeat padding-box;
-            content: "";
-            display: table;
-            clear: both;
-            position: relative;
-            margin: 0 auto;
-            justify-content: space-between;
+           
+           
+            
+            
+          
         }
 
         .meniu{
-            width: 37px;
-            height: 20px;
             top: 39px;
             left: 1774px;
             color: #FFFFFF;
-            position: absolute;
+            float: right;
             font-family: SourceSansPro-Bold ;
             font-size: 14px;
+            position:absolute;
         }
 
         .meniu:hover{
@@ -100,8 +98,7 @@
             color: grey;
             box-shadow: 0 4px 8px dark grey;
         }
-        
-
+    
         h1{
             padding-top:  90px;
             padding:  105px;
@@ -144,39 +141,53 @@
         label {
             display: inline-block;
             color: #060606;
-            padding-top: 13px;
-            padding-left: 0px;
+            margin-top: -25px;  
         }
 
-        h5{
-            font: SourceSansPro-Black;
-            font-size: 25px;
-        }
-
-        .input{
-            
-           
-           
+        .label2{
+            display: inline-block;
+            color: #060606;
+            margin-left: -266px;
         }
 
         input {
             display:inline-block;
             border: none;
             height: 62px;
-            width: 967px;
+            width: 937px;
             background: #F8F8F8 ;
             font-family:SourceSansPro-Black ;
             font-size: 18px;
-           
+            color: #969696;
+            float: right;
+            padding-left: 30px;
+        }
+
+        .input2{
+            display:inline-block;
+            border: none;
+            height: 238px;
+            width: 937px;
+            background: #F8F8F8 ;
+            font-family:SourceSansPro-Black ;
+            font-size: 18px;
+            color: #969696;
+            float: right;
+            padding-left: 30px;
            
         }
 
-        /*#Typeyourmessagehere…{
-            width: 967px;
-            height: 238px;
-            background: #F8F8F8 ;
-            float: right;
-        }*/
+        input:focus {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #808080;
+        }
+
+        .input2:focus {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #808080;
+        }
 
         .btn {
             font: normal normal normal 25px SourceSansPro-Black;
@@ -184,8 +195,8 @@
             background-color:#060606;
             width: 232px;
             height: 70px;
-            left: 236px;
-          
+            margin-left: 236px;
+            margin-top: 50px;
             border: none;
             box-shadow: 0 4px 8px darkgray;
           
@@ -224,6 +235,12 @@
             color: #FFFFFF;
         }
 
+        h5{
+            font-family:SourceSansPro-Black ;
+            font-size: 25px;
+            color: #060606;
+        }
+
         p{
             font-family:SourceSansPro-Regular ;
             font-size: 18px;
@@ -234,42 +251,51 @@
             font-family: SourceSansPro-Black;
             font-size: 16px;
             color: #FFFFFF;
+            float: left;
+            margin-top:10px ;
+            padding-left: 61px;
         }
 
-        #E-mail{
+        #E-mail-2{
             display:inline-block;
-            border: 1px    #FFFFFF ;
+            border: none;
+            border-bottom: 1px solid #FFFFFF;
+            opacity: 1;
             height: 31px;
-            width: 380px;
+            width: 320px;
             background: #060606 ;
             font-family:SourceSansPro-Black ;
             font-size: 16px;
-        }
-
-        .icon{
-            width: 16px;
-            height: 8px;
             color:#FFFFFF ;
-            display: block;
+            float: left;
+            padding-right: 61px;
+            padding-left: 0;
+            
         }
 
         .column-bottom-1 {
             float: left;
-            padding-bottom: ;
-            padding-top:; 
+            padding-left: 108px;
+            padding-top:8px;
+            padding-right: 139px; 
+            padding-bottom: 153px;
+           
         }  
 
         .column-bottom-2 {
             float: left;
-            padding-bottom: ;
-            padding-top:; 
+            padding-top: 63px;
+            width: 547px;
+            height: 101px;
         } 
 
           .column-bottom-3 {
             float: left;
-            padding-bottom: ;
-            padding-top:; 
+           padding-top: 63px;
+           padding-left: 186px;
         }
+
+      
 
         .Contact{
             font-family:SourceSansPro-Black ;
@@ -277,17 +303,46 @@
             color: #FFFFFF;
         }
 
+        .btn2 {
+            width: 16px;
+            height: 8px;
+            color:#FFFFFF;
+            float:right;
+            margin-top:-32px ;
+            padding-left: 22px;  
+          
+        }
 
+        .btn2:hover {
+            cursor:pointer; 
+        }
+
+      
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            padding-top: 254px;
+            padding-left: 50px;
+        }
+
+        li {
+            float: left;
+            padding-inline: 20px;
+        }
     </style>
 </head>
 <body>
     <div class='container'>
         <div class='row-1'>
-            <a class='meniu'>MENU</a>
+            <div><a class='meniu'>MENU</a></div>
         </div>
+
         <div class='row-2'>
             <h1>Contact us</h1>  
         </div>
+
         <div class='row-3'>
             <div class='youcan'>
             <h2>You can </br> <span class='writeus'>write us</span> here</h2>
@@ -300,14 +355,14 @@
                 </div>
                 <div class='input'>
                     <label for='Phone no.'><h5>Phone no.</h5></label>
-                    <input placeholder='Phone_' type='text' id='Phone_' name='Phone_' />
+                    <input placeholder='Phone_' type='text' id='Phone_' name= 'Phone_' />
                 </div>
                 <div class='input'>
                     <label for='Email'><h5>Email</h5></label>
                     <input placeholder='Email_' type='text' id='Email_' name='Email_' />
                 </div>
-                <div class='input'>
-                    <label for='Message'><h5>Message</h5></label>
+                <div class='input2'>
+                    <label class='label2' for='Message'><h5>Message</h5></label>
                     <input placeholder='Type your message here…' type='text' id='Typeyourmessagehere…' name='Type your message here…' />
                 </div>
          
@@ -316,6 +371,7 @@
                 </div>
             </div>
         </div>
+
         <div class='row-4'>
             <div class='column-1'>
                 <h3>London</h3>
@@ -330,25 +386,40 @@
                 <p>670 Henry Smith St., Portland, ME 04103</p>
             </div>                 
         </div>
+
         <div class='row-5'>
             <div class='column-bottom-1'>
                 <h3>Create new <br>digital future</h3>
             </div>
             <div class='column-bottom-2'>
                 <span  style='font-size:36px; color: #FFFFFF; font-family:SourceSansPro-Black'>Subscribe our</span> <span style='font-size:36px; color:#F5A623; font-family:SourceSansPro-Black'>newsletter</span>
-                <div class='input2'>
+                <br><br>
+                <input  placeholder='E-mail' type='text' id='E-mail-2' name='E-mail' />
+                <p class='Subscribe'>Subscribe</p> 
+                <a class='btn2'><i class="fas fa-long-arrow-alt-right"></i></a>
                     
-                    <input placeholder='E-mail' type='text' id='E-mail' name='E-mail' />
-                </div>
-                    <div class='Subscribe'>Subscribe</div>  
-                    <div> <baton class='icon'></baton><i class="fal fa-arrow-alt-right">f356</i><p>test</p> </baton></div>          
-                    <i class="fal fa-arrow-alt-right">f356</i>
+                    
+            </div>
+
             <div class='column-bottom-3'>
                 <div class='Contact'>Contact us</div>
-                <p style='font-size:16px'>(052) 611-5711 name.surname@companyname.com</p>
+                <p style='font-size:16px'>(052) 611-5711 
+                 <br> <br>  name.surname@companyname.com</p>
+               
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f " style="width: 10px;height: 20px;color:#FFFFFF;"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in "style="width: 20px;height: 20px;color:#FFFFFF;"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram "style="width: 20px; height: 20px;color:#FFFFFF;"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter "style="width: 25px;height: 20px;color:#FFFFFF;"></i></a></li>
+                </ul>
             </div>
         </div>
     </div>
+   
+    
+    
     
 </body>
 </html>
