@@ -1,0 +1,52 @@
+@media screen and (max-width: 1295px) {
+
+    html {
+        font-size: 16px;
+    }
+
+    h3 {
+        font-size: 2.8333rem;
+    }
+
+/* label { */
+    /* display: inline-block; */
+    /* padding-left: 108px; */
+/* } */
+
+/* input { */
+    /* display:inline-block; */
+    /* width:567px; */
+    /* float:left;    */
+/* } */
+
+/* .textarea{ */
+    /* display:inline-block; */
+    /* border: none; */
+    /* width:567px; */
+    /* float:left;   */
+/* } */
+
+.btn {
+    margin-left: 240px; 
+}
+
+.col4{
+    width: 100%;
+    /* padding-left: 107px; */
+    margin-left: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.col5{
+    width: 50%;
+    padding-left: 107px;
+    margin-left: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 20px;
+    background-color:#060606 ;
+}   
+}
