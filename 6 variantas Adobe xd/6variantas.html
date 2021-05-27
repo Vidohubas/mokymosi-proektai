@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Smile!</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <style>
+         @media screen and (max-width: 780px) {
+
+            
+
+            .visas div {
+            width: 100%;
+            flex-flow: column wrap;
+            margin: auto;
+            text-align: center;
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+            }
+            .baltas div{
+                width: 50%;
+                display: inline-grid;
+                justify-content:inherit;
+                
+            }
+            .apacia {
+                margin-top: 50px !important;
+            }
+            .virsus {
+                padding-bottom: 50px !important;
+            }
+
+            .dienu-dezute .desine {
+                position: relative !important;
+            }
+
+        
+        }
+        html {
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            max-width: 1920px;
+            margin: 0 auto;
+            
+        }
+        .container {
+            display: flex; 
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+        .virsus {
+            width: 100%;
+            background-color: #0000004F;
+            padding-bottom: 150px;
+        }
+        .nav {
+            display:flex;
+            align-items: center;
+            margin-left: 160px;
+            margin-right: 160px;
+            padding-top: 64px;
+            padding-bottom: 63px;
+            border-bottom: 2px solid lightgray;
+            font-size: 1.0625rem;
+            position: relative;
+            /* text-align: center; */
+        }
+        .clearfix {
+            overflow: hidden;
+        }
+        
+        .nav a {
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            color:#ffffff;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
+
+        }
+        .nav a:hover{
+            border-bottom: 2px solid lightgray;
+        }
+
+        .navigation-btn {
+            /* right: 0; */
+            display: inline-flex;
+            margin-left: 20px;
+            margin-left:auto;
+            /* float: left; */
+            /* position: absolute; */
+            /* margin-top: 10px;
+            margin-bottom: 10px; */
+        }
+        .btn1 {
+            
+            background-color: transparent;
+            border: none;
+            font-size: 1.0625rem;
+            color:#ffffff;
+            font-weight: bold;
+
+        }
+        .btn2 {
+            font-weight: bold;
+            background-color: transparent;
+            border: none;
+            padding-left: 10px;
+            padding-right: 20px;
+            font-size: 1.0625rem;
+            color:#ffffff;
+
+
+        }
+        .btn1:hover, .btn2:hover {
+            cursor: pointer;
+            color: gray;
+        }
+        .search {
+            display: block;
+            background-color: #446CCD;
+            width: 4.0625rem;
+            height: 4.0625rem;
+            padding: 23px;
+            font-size: 0.9785rem;
+            cursor: pointer;
+            position: relative;
+            color: white;
+            
+        }
+
+
+
+        .tekstas-kaireje {
+            width: 40%;
+            margin-left: 160px;
+            margin-right: 160px;
+            margin-bottom: 150px;
+        }
+    
+        .tekstas-kaireje > h1 {
+            font-size: 76px;
+            color:#ffffff;
+
+        }
+        .tekstas-kaireje > p {
+            font-size: 1.1875rem;
+            color:#ffffff;
+
+        }
+        .learn-more-btn {
+            background-color: #446CCD;
+            color:#ffffff;
+            border: none;
+            width: 210px;
+            height: 65px;
+            font-size: 0.9375rem;
+            cursor: pointer;
+
+        }
+
+
+
+        .trys-divai {
+            width: 100%;
+            display: flex;
+            float: left;
+            margin-left: 160px;
+            margin-right: 160px;
+            margin-top: -215px;
+
+            
+        }
+        .melynas, .zydras, .baltas {
+            padding-right: 50px;
+            padding-left: 50px;
+            padding-bottom: 50px;
+            
+            
+            
+        }
+        .melynas {
+            background-color: #385BB2;
+            color:#ffffff;
+            width: 33.33%;
+
+        }
+        .melynas i {
+            margin-top: 40px;
+            margin-left: 0px;
+            margin-bottom: 30px;
+            font-size: 30px;
+            color: white;
+
+        }
+        .melynas > h3 {
+            font-size: 1.6875rem;
+        }
+        .melynas > p {
+            font-size: 1.1875rem;
+        }
+        .melynas a {
+            color:#ffffff;
+            text-decoration: none;
+            cursor: pointer;
+            border-bottom: 3px solid white;
+
+        }
+        .melynas hr {
+            border: 1px solid #4f6bb3;
+        }
+
+        .zydras {
+            background-color: #446CCD;
+            color:#ffffff;
+            width: 33.33%;
+
+
+        }
+        .zydras i {
+            margin-top: 40px;
+            margin-left: 0px;
+            margin-bottom: 30px;
+            font-size: 30px;
+            color: white;
+        }
+        .zydras > h3 {
+            font-size: 1.6875rem;
+        }
+        .zydras > p {
+            font-size: 1.1875rem;
+        }
+        .zydras a {
+            color:#ffffff;
+            text-decoration: none;
+            cursor: pointer;
+            border-bottom: 3px solid white;
+
+        }
+        .zydras hr {
+            border: 1px solid #5d7ed0;
+
+        }
+
+
+
+        .baltas {
+            background-color: #F8F8F8;
+            color: #060606;
+            width: 33.33%;
+            min-width: 30%;
+
+        }
+        .baltas i {
+            margin-top: 40px;
+            margin-left: 0px;
+            margin-bottom: 30px;
+            font-size: 30px;
+            color: black;
+        }
+        .baltas > h3 {
+            font-size: 1.6875rem;
+
+        }
+        .baltas hr {
+            border: 1px solid #e8e7e7;
+
+        }
+        .days{
+            display: inline-grid;
+            width: 50%;
+            float: left;
+            color: #6C6C6C;
+            font-size: 1.1875rem;
+        }
+        .hours {
+            display: inline-grid;
+            width: 50%;
+            text-align: right;
+            color: #6C6C6C;
+            font-size: 1.1875rem;
+            
+        }
+
+
+        .vidurys {
+            width: 100%;
+            display: flex;
+            float: left;
+            margin-left: 160px;
+            margin-right: 160px;
+            background-color: white;
+
+        }
+        .tekstas40{
+            width: 40%;
+            font-size: 2.4375rem;
+            padding-top: 0;
+            
+        }
+        .tekstas60 {
+            width: 60%;
+            font-size: 1.1875rem;
+            padding-top: 40px;
+            padding-left: 110px;
+            color: #6C6C6C;
+            
+        }
+        .see-our-services-btn {
+            background-color: #446CCD;
+            color:#ffffff;
+            border: none;
+            width: 210px;
+            height: 65px;
+            font-size: 0.9375rem;
+            margin-top: 40px;
+            cursor: pointer;
+
+        }
+         .signature img{
+            float: left;
+            width: 214px;
+            height: 127px;
+            
+        }
+        
+        .signature2 h4 {
+            font-size: 1.4375rem;
+            padding-top: 20px;
+            padding-left: 285px;
+            margin-bottom: 0;
+        }
+        .signature2 p {
+            font-size: 1.0625rem;
+            padding-left: 285px;
+            margin: 0;
+            color: #000000B3;
+        } 
+
+
+        .apacia {
+            display: flex;
+            float: left;
+            width: 100%;
+            justify-content: space-evenly;
+            margin-left: 160px;
+            margin-right: 160px;
+            margin-top: 30px;
+
+        }
+        
+        .blokas {
+            width: 30%;
+            margin-left: 20px;
+            margin-right: 20px;
+            /* margin-top: 150px; */
+            border-top: 1px solid #D4D4D4;
+            padding: 20px;
+        }
+        .blokas > h2 {
+            font-size: 2.4375rem;
+        }
+        .blokas > h3 {
+            font-size: 1.6875rem;
+        }
+        .blokas > p {
+            color: #6C6C6C;
+            
+        }
+        
+        .dienu-dezute p {
+            display: inline-block;
+        }
+
+        .dienu-dezute .eilute {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .dienu-dezute p {
+            width: 50%;
+        }
+
+        .dienu-dezute .desine {
+            text-align:right;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+        <div class="virsus">
+            <div class="nav clearfix">
+                <a href='#' class='item -link'>Services</a>
+                <a href='#' class='item -link'>About Us</a>
+                <a href='#' class='item -link'>Our Team</a>
+                <a href='#' class='item -link'>Testimonials</a>
+                <a href='#' class='item -link'>News</a>
+                <a href='#' class='item -link'>Contacts</a>
+                
+                <div class="navigation-btn">
+                    <button class="btn1">RU</button>
+                    <button class="btn2">EN</button>
+                    <span class="search"><i class='fas fa-search'></i></span>
+
+                </div>
+            
+            </div>
+            
+            <div class="tekstas-kaireje">
+                <h1>Let us brighten your smile!</h1>
+                <p>We are dental care clinic that helps people to take care of their health and we have best dental doctors here.</p>
+                <button class="learn-more-btn">Learn more</button>
+            </div>
+
+        </div>
+
+
+        <div class="trys-divai">
+            <div class="melynas">
+                <span>
+                <i class='fas fa-phone-alt'></i>
+                </span>
+                <hr>
+                <h3>Emergency Call</h3>
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blonditiis.</p>
+                <a href="#">CALL US NOW</a>
+            </div>
+
+            <div class="zydras">
+                <span>
+                    <i class='fas fa-map-marker-alt'></i>
+                </span>
+                <hr>
+                <h3>Where Are We?</h3>
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blonditiis.</p>
+                <a href="#">SEE ON MAP</a>
+            </div>
+            <div class="baltas">
+                <span>
+                    <i class='far fa-calendar-alt'></i>
+                </span>
+                    <hr>
+                <h3>Opening Hours</h3>
+                <div class="dienu-dezute">
+                    <div class='eilute'>
+                        <p>Mon-Fri:</p>
+                        <p class='desine' > 8:00am - 7:00pm</p>
+                    </div>
+                    <div class='eilute'>
+                        <p>Saturday:</p>
+                        <p class='desine'>9:00am - 6:00pm</p>
+                    </div>
+                    <div class='eilute'>
+                    <p>Sunday:</p>
+                    <p class='desine'>Closed</p>
+                </div>
+                </div>    
+            </div>
+        </div>
+
+
+        <div class="vidurys">
+            <div class="tekstas40">
+                <h2>Choose Our Clinic, Chose The Best Care For Yourself And Your Family</h2>
+                <div class="signature">
+                    <img src="https://signaturely.com/wp-content/uploads/2020/04/unreadable-letters-signaturely.svg" alt="signature">
+                    <div class="signature2">
+                    <h4>Tom Henders</h4>
+                    <p>Head Dentist</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tekstas60">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque nisi nostrum quos eveniet voluptatum atque labore assumenda numquam sint et? Reprehenderit quod deleniti pariatur minima laboriosam cumque nobis ratione. Quis!</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                <button class="see-our-services-btn">See Our Services</button>
+            </div>
+            
+
+        </div>
+
+
+        <div class="apacia">
+            <div class="blokas">
+                <h2>Our Values</h2>
+            </div>
+            <div class="blokas">
+                <h3>Quality</h3>
+                <p>It has survived not only five centuries, but also the leap into electronic typesitting, remaining essentially unchanged.
+                </p>
+            </div>
+            <div class="blokas">
+                <h3>Health</h3>
+                <p>It has survived not only five centuries, but also the leap into electronic typesitting, remaining essentially unchanged.
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+    
+</body>
+</html>
