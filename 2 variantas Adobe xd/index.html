@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
 </head>
 
 <style>
@@ -32,29 +32,35 @@
         }
 
         .container {
-            display: flex; 
-            flex-wrap: wrap;
+          
             margin: 0 auto;
+            width: 100%;
           
         }
 
         .navbar {
-            display:flex;
-            width: 100%;
-            align-items: center;
-            min-height:151px;
-            margin-left: 160px;
-            margin-right: 108px;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: stretch;
+            margin-left: auto;
+            margin-right: auto;
+            width: 85%;
+            padding-left: 120px;
             padding-top: 64px;
             padding-bottom: 63px;
-            border-bottom: 2px solid lightgray;
             font-size: 17px;
             position: relative;
-            /* text-align: center; */
+        
         }
+
+        .navbar2{
+          
+        }
+
         .clearfix {
             overflow: hidden;
         }
+
          a {
             float: left;
             color: #060606;
@@ -62,26 +68,24 @@
             font-size:17px ;
             text-decoration: none;
             text-transform: uppercase;
-            padding-top: 10px;
-            padding-bottom: 10px;
             padding-left: 24px;
             padding-right: 24px;
             transition: all 0.3s ease;
         }
 
         a:hover{
-            border-bottom: 3px solid#555;
-           
+            border-bottom: 3px solid#060606;
+            margin: -1px;
     
         }
 
         .navigation-btn {
-            display: inline-flex;
+            display: inline-block;
+            position: absolute;
             right: 0;
-            margin-left:auto;
-            position: absolute; 
-        
-        }
+           margin-right: -36px;
+             
+        } 
 
         .btn1 { 
             background-color: transparent;
@@ -89,6 +93,7 @@
             color: #060606;
             font-family: 'Poppins', sans-serif;
             font-size:17px ;
+            
         }
         .btn2 {
             background-color: transparent;
@@ -110,89 +115,173 @@
             padding-top: 23px;
             padding-bottom:23px;
             padding-right: 23px;
-            cursor: pointer;
+            cursor: pointer; 
+          
+        }
+        
+     
+        .toggle > .icon,
+        .toggle > .icon:before,
+        .toggle > .icon:after{
+        
+            display: block;
+            width: 24px;
+            height: 3px;
+            background-color: #555555;
+            transition: background-color 0.3s linear, transform 0.3s linear;
+        
+        }
+
+        .toggle > .icon:before,
+        .toggle > .icon:after {
+            position: absolute;
+            content:""
+            
+        }
+
+        .toggle > .icon:before {
+            top: -8px;
+        }
+
+        .toggle > .icon:after {
+            top: 8px;
+        }
+
+        .toggle > .icon {
             position: relative;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .toggle {
+            display:none;
+            border:0;
+            background-color: transparent;
+            cursor: pointer;
+            padding: 22px;
+        }
+
+        .toggle.active > .icon {
+            background-color: transparent;
+        }
+
+        .toggle.active > .icon:before {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .toggle.active > .icon:after {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        @media all and (max-width: 1226px) {
+
+
+            .navbar2 {
+                position: absolute;
+                width: 50%;
+            }
+
+            .navbar2 {
+                flex-direction: column;
+            }
+            .navbar2 > .list {
+                display:none;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            .navbar2 >.list.active {
+                display:flex;
+            }
+            .navbar2 > .list > .item {
+                width: 100%
+            }
+            .navbar2 > .toggle {
+                position: absolute;
+                right: 0;
+                display:block;
+            }  
+
+            a:hover{
+                border-bottom: none;
+                background-color: #F8F8F8;
+                color:#06060680 ;
+            
+            }
+
+            a {
+                padding-top: 10px; 
+                padding-bottom: 10px;
+            }
+
+            .toggle {
+            display:block;
+            border:0;
+            background-color: transparent;
+            cursor: pointer;
+           
+            position: absolute;
+            right: -50px;
+            bottom: 16px;
+        
+        
+         
           
         }
 
-       
-
-                
-        .navigation {
-            overflow: hidden;
-        }
-
-        .navigation .icon {
-            display: none;
-        }
-
-        .icon:hover{
-            border-bottom: none;
-            color: gray;
-    
-        }
-
-
-        @media screen and (max-width: 1189px) {
-        .navigation a {display: none;}
-        .navigation a.icon {
-            float: right;
-            display: block;
-            
-        }
-        }
-
-        @media screen and (max-width: 1189px) {
-        .navigation.responsive {position: relative;}
-        .navigation.responsive .icon {
+        .navigation-btn {
+            display: inline-block;
             position: absolute;
-            right: 0;
-            top: 0;
-        }
-        .navigation.responsive a {
-            float: none;
-            display: block;
-            text-align: left;
-        }
-        }
-       
+            right: 50px;
+          
+             
+        } 
 
+   
+        }
+      
     
 
 </style>
 <body>
     <div class='container'>
-        <div class='navbar clearfix'>
-       
-                <div class='navigation list clearfix'id="mynavigation" >
+        
+        <div class='navbar'>
+
+            <div class='navbar2'>
+                
+                <nav class='list clearfix' >
                     <a href='#' class='item -link'>SERVICES</a>
                     <a href='#' class='item -link'>ABOUT US</a>
                     <a href='#' class='item -link'>OUR TEAM</a>
                     <a href='#' class='item -link'>TESTIMONIALS</a>
                     <a href='#' class='item -link'>NEWS</a>
                     <a href='#' class='item -link'>CONTACTS</a>
-                    <a href="javascript:void(0);" class="active icon" onclick="myFunction()">
-                        <i class="fa fa-bars"></i>
-                      </a>
-                </div>
-                
-                <div class='navigation-btn list'>
+                </nav>
+
+            </div>
+       
+                <nav class='navigation-btn '>
                     <button class="btn1">RU</button>
                     <button class="btn2">EN</button>
                     <span class="search"><i class='fas fa-search'></i></span>
-                </div> 
-                
+                </nav> 
+
+                <button id='hamburger' class='toggle'>
+                    <span class='icon'></span>
+                </button>
+
         </div>
+
+        <hr style="width: 87%;border: 1px solid #06060626; text-align:center;margin-left:120px; margin-right: 107px;">
+
     </div>
 
     <script>
-        function myFunction() {
-          var x = document.getElementById("mynavigation");
-          if (x.className === "navigation") {
-            x.className += " responsive";
-          } else {
-            x.className = "navigation";
-          }
+
+        //Hamburger funkcija
+        document.querySelector('.toggle').onclick = function() {
+           this.classList.toggle('active');
+           document.querySelector('.list').classList.toggle('active');
         }
         </script>
 
