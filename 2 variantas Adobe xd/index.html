@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-  
+    
 </head>
 
 <style>
@@ -20,6 +20,7 @@
        html {
             font-size: 17px;
             font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
         }
 
         body {
@@ -28,14 +29,18 @@
             font-family: 'Poppins', sans-serif;
             font-size:17px ;
             background-color: #FFFFFF;
-            overflow: hidden;
+          
         }
 
         .container {
-          
+            overflow: hidden;
             margin: 0 auto;
             width: 100%;
           
+        }
+
+        .clearfix{
+            overflow: hidden;
         }
 
         .navbar {
@@ -46,15 +51,11 @@
             margin-right: auto;
             width: 85%;
             padding-left: 120px;
-            padding-top: 64px;
-            padding-bottom: 63px;
-            font-size: 17px;
+            padding-top: 34px;
+            padding-bottom: 33px;
+            font-size: 1rem;
             position: relative;
         
-        }
-
-        .navbar2{
-          
         }
 
         .clearfix {
@@ -65,7 +66,7 @@
             float: left;
             color: #060606;
             font-family: 'Poppins', sans-serif;
-            font-size:17px ;
+            font-size:1rem ;
             text-decoration: none;
             text-transform: uppercase;
             padding-left: 24px;
@@ -75,7 +76,7 @@
 
         a:hover{
             border-bottom: 3px solid#060606;
-            margin: -1px;
+            margin: -3px;
     
         }
 
@@ -83,7 +84,7 @@
             display: inline-block;
             position: absolute;
             right: 0;
-           margin-right: -36px;
+            margin-right: -36px;
              
         } 
 
@@ -92,7 +93,7 @@
             border: none;
             color: #060606;
             font-family: 'Poppins', sans-serif;
-            font-size:17px ;
+            font-size:1rem ;
             
         }
         .btn2 {
@@ -100,7 +101,7 @@
             border: none;
             color: #060606;
             font-family: 'Poppins', sans-serif;
-            font-size:17px ;
+            font-size:1rem ;
         }
 
         .btn1:hover, .btn2:hover {
@@ -115,8 +116,12 @@
             padding-top: 23px;
             padding-bottom:23px;
             padding-right: 23px;
-            cursor: pointer; 
-          
+            cursor: pointer;   
+        }
+
+        .search:hover {
+            cursor:pointer;
+            color:greenyellow;
         }
         
      
@@ -178,6 +183,7 @@
             .navbar2 {
                 position: absolute;
                 width: 80%;
+                margin-top: -10px;
             }
 
             .navbar2 > .list {
@@ -191,7 +197,9 @@
             }
 
             .navbar2 > .list > .item {
-                width: 100%
+                width: 100%;
+                background-color: #FFFFFF;
+                opacity: 0.9;   
             }
 
             .toggle {
@@ -200,34 +208,201 @@
                 display:block;
             }  
 
-            a:hover{
-                border-bottom: none;
-                background-color: #F8F8F8;
-                color:#06060680 ;
-            }
-
             a {
                 padding-top: 10px; 
                 padding-bottom: 10px;
             }
 
-            .toggle {
+            
+        .search{
+            padding-left: 16px;
+            padding-top: 16px;
+            padding-bottom:16px;
+            padding-right: 16px;
+          
+        }
+
+        .toggle {
             display:block;
             border:0;
             background-color: transparent;
             cursor: pointer;
             position: absolute;
             right: -50px;
-            bottom: 16px;   
+            bottom: -12px;   
             }
 
-            .navigation-btn {
+        .navigation-btn {
             display: inline-block;
             position: absolute;
-            right: 50px;    
+            right: 100px;    
             } 
+
+        .search-container{
+         
+         width: 70%;
+     }
         }
-      
+
+        h1{
+            font-family: 'Poppins', sans-serif;
+            color: #060606;
+            font-size: 4.4706rem;
+            padding-left: 124px;
+            padding-top: 20px;
+        }
+        
+        p{
+            font-family: 'Poppins', sans-serif;
+            color:#6C6C6C;
+            font-size: 1.1176rem;
+            padding-left: 7.2941rem; 
+            margin-top: -2.3529rem;
+        }
+
+
+        .search-container{
+            float: left;
+            margin-top: 1.2353rem;
+            background: #F8F8F8;
+            font-size: 1.1765rem;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            margin-left: 7.2941rem;
+            height:4.7059rem ;
+            padding-left: 1.7647rem;
+            padding-top: 1.3529rem;
+            padding-bottom:1.7059rem ;
+            position: relative;
+            
+        }
+
+        .buttonsearch{
+            border: none;
+            background-color: #F8F8F8 ;
+            color: #060606;
+            font-size: 1.2353rem;
+            float: right;
+            padding-top: 0.4706rem;
+            padding-right:2.2941rem ;
+            right: 0;
+            position: absolute;
+        }
+
+        .inputsearch{
+            border: none;
+            background-color: #F8F8F8 ;
+            color: #6C6C6C;
+            font-size: 1.1765rem;
+            font-family: 'Poppins', sans-serif;
+            position: absolute;
+            left: 0;
+            margin-left:1.7647rem ;
+        }
+
+        .buttonback{
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 0.8824rem;
+            background-color: #446CCD;
+            border: none;
+            padding-top: 1.3529rem;
+            padding-left: 3.0588rem;
+            padding-right: 3.0588rem;
+            padding-bottom: 1.2353rem;
+            position: relative;
+        
+        }
+
+        .buttonback:hover {
+            cursor:pointer;
+            box-shadow: 0 4px 8px grey;
+            color:greenyellow;
+        }
+
+        .btnhome{
+            width: 100%;
+            float: left;
+            padding-left: 7.2941rem;
+            padding-top: 2.9412rem;
+            padding-bottom: 2.9412rem;
+            padding-right:3.0588rem ;
+        }
+
+        .uli{
+            overflow: auto;
+            position: absolute;
+            right: 66px;
+        }
+
+        ul {
+            list-style-type: none;
+            overflow: auto;
+            color: #060606;
+           
+        }
+
+        li {
+            float: right;
+            padding-inline: 20px;
+        
+        }
+
+        .btnface{
+            border: none;
+            background-color: #FFFFFF;
+            color:#060606 ;
+        }
+
+        .btnin{
+            border: none;
+            background-color: #FFFFFF;
+            color:#060606 ;
+        }
+
+        .btnface:hover,.btnin:hover {
+            cursor:pointer;
+            opacity: 0.5;
+        }
+
+
+        
+
+        @media all and (max-width: 926px) {
+
+        html {
+            font-size: 14px; 
+            overflow-x: hidden ;
+        }
+
+        .search-container{
+         
+            width: 70%;
+        }
+
+        }
+
+
+        
+        @media all and (max-width: 552px) {
+
+        html {
+            font-size: 12px; 
+            }
+
+        hr{
+            width: 50%;
+        } 
+
+        .navbar2 {
+                position: absolute;
+                width: 80%;
+                margin-top: 40px;
+            }
+
+       
+        }
 </style>
 <body>
     <div class='container'>
@@ -259,9 +434,35 @@
 
         </div>
 
-        <hr style="width: 87%;border: 1px solid #06060626; text-align:center;margin-left:120px; margin-right: 107px;">
+        <hr style="width: 87%;border: 1px solid #06060626; text-align:center;margin-left:7.0588rem; margin-right: 6.2941rem;">
 
-    </div>
+       
+          <h1>404 Error</h1> 
+          <p>The page you were looking for couldn't be found. The page could be
+            <br> removed or you misspelled the word while searching for it. Maybe try a search?</p> 
+
+                <div class="search-container clearfix  ">
+                    <form action="/action_page.php">
+                      <input class='inputsearch' type="text" placeholder="Search" name="search">
+                      <button class='buttonsearch' type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+       
+
+        <div class='btnhome'>
+            <button class='buttonback'>
+            Back to Home
+            </button>
+        </div>     
+           
+        <hr style="width: 87%;border: 1px solid #06060626; text-align:center;margin-left:7.0588rem; margin-right: 6.2941rem;">
+
+        <div class='uli '>
+            <ul>
+                <li><button class='btnface' href="#"><i class="fab fa-facebook-f " style="width: 10px;height: 20px;color:#060606; font-size: 1.2353rem;"></i></button></li>
+                <li><button class='btnin' href="#"><i class="fab fa-linkedin-in "style="width: 20px;height: 20px;color:#060606;font-size: 1.2353rem"></i></button></li>
+            </ul>
+        </div>
 
     <script>
 
