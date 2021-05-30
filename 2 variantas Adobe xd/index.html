@@ -175,27 +175,26 @@
 
         @media all and (max-width: 1226px) {
 
-
             .navbar2 {
                 position: absolute;
-                width: 50%;
+                width: 80%;
             }
 
-            .navbar2 {
-                flex-direction: column;
-            }
             .navbar2 > .list {
                 display:none;
                 flex-direction: column;
                 flex-wrap: wrap;
             }
-            .navbar2 >.list.active {
+
+            .list.active {
                 display:flex;
             }
+
             .navbar2 > .list > .item {
                 width: 100%
             }
-            .navbar2 > .toggle {
+
+            .toggle {
                 position: absolute;
                 right: 0;
                 display:block;
@@ -205,7 +204,6 @@
                 border-bottom: none;
                 background-color: #F8F8F8;
                 color:#06060680 ;
-            
             }
 
             a {
@@ -218,29 +216,18 @@
             border:0;
             background-color: transparent;
             cursor: pointer;
-           
             position: absolute;
             right: -50px;
-            bottom: 16px;
-        
-        
-         
-          
-        }
+            bottom: 16px;   
+            }
 
-        .navigation-btn {
+            .navigation-btn {
             display: inline-block;
             position: absolute;
-            right: 50px;
-          
-             
-        } 
-
-   
+            right: 50px;    
+            } 
         }
       
-    
-
 </style>
 <body>
     <div class='container'>
@@ -249,13 +236,13 @@
 
             <div class='navbar2'>
                 
-                <nav class='list clearfix' >
-                    <a href='#' class='item -link'>SERVICES</a>
-                    <a href='#' class='item -link'>ABOUT US</a>
-                    <a href='#' class='item -link'>OUR TEAM</a>
-                    <a href='#' class='item -link'>TESTIMONIALS</a>
-                    <a href='#' class='item -link'>NEWS</a>
-                    <a href='#' class='item -link'>CONTACTS</a>
+                <nav class='list' >
+                    <a href='#' class='item'>SERVICES</a>
+                    <a href='#' class='item'>ABOUT US</a>
+                    <a href='#' class='item'>OUR TEAM</a>
+                    <a href='#' class='item'>TESTIMONIALS</a>
+                    <a href='#' class='item'>NEWS</a>
+                    <a href='#' class='item'>CONTACTS</a>
                 </nav>
 
             </div>
@@ -266,7 +253,7 @@
                     <span class="search"><i class='fas fa-search'></i></span>
                 </nav> 
 
-                <button id='hamburger' class='toggle'>
+                <button  class='toggle'>
                     <span class='icon'></span>
                 </button>
 
@@ -278,12 +265,11 @@
 
     <script>
 
-        //Hamburger funkcija
         document.querySelector('.toggle').onclick = function() {
            this.classList.toggle('active');
            document.querySelector('.list').classList.toggle('active');
         }
-        </script>
+    </script>
 
 </body>
 </html>
