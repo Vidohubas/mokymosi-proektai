@@ -27,7 +27,6 @@
             max-width: 1868px;
             margin: 0 auto;
             font-family: 'Poppins', sans-serif;
-            font-size:17px ;
             background-color: #FFFFFF;
           
         }
@@ -93,10 +92,11 @@
             font-family: 'Poppins', sans-serif;
             font-size:1rem ;
             position: absolute;
-            right: 40px;
+            right: 2.3529rem;
             
             
         }
+
         .btn2 {
             display: flex;
             flex-flow: row wrap;
@@ -127,8 +127,8 @@
             padding-right: 1.3529rem;
             cursor: pointer; 
             position: absolute;
-            right: -94px;
-            top:14px;
+            right: -5.5294rem;
+            top:0.8235rem;
         }
 
         .search:hover {
@@ -264,7 +264,6 @@
             margin-top: -2.3529rem;
         }
 
-
         .search-container{
             float: left;
             margin-top: 1.2353rem;
@@ -368,8 +367,6 @@
         }
 
 
-        
-
         @media all and (max-width: 1205px) {
 
             html {
@@ -378,15 +375,88 @@
             }
 
             .search-container{
-                width: 90%;
+                width: 60%;
             }
 
          
         }
 
+        @media all and (max-width: 1000px) {
+
+            html {
+                font-size: 12px; 
+                overflow-x: hidden ;
+            }
+
+            .search-container{
+                width: 70%;
+            }
+
+            .toggle {
+                top: 10px;
+                right:0px;
+                position: absolute;
+            }
+
+            .search{
+
+                right: -10px; 
+                top: 2px; 
+            }
+
+            .btn1{
+                right: 70px;
+                top: 10px;
+            }
+
+             .btn2{
+                right: 40px;
+                top: 10px;
+            }
+            
+            }
 
         
-    
+            @media all and (max-width: 600px) {
+
+            html {
+                font-size: 10px; 
+                overflow-x: hidden ;
+            }
+
+            .search-container{
+                width: 100%;
+            }
+
+            .navbar2 > .list {
+             
+               
+                right: 110px;
+                position: absolute;
+               
+            }
+
+            .search{
+
+                right: -120px; 
+                top: 2px; 
+                }
+
+                .btn1{
+                right: -60px;
+                top: 10px;
+                }
+
+                .btn2{
+                right: -80px;
+                top: 10px;
+                }
+
+            .search-container{
+                width: 80%;
+            }
+
+        }
 
 </style>
 <body>
