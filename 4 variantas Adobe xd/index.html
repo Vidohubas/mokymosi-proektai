@@ -203,6 +203,11 @@
             margin-left: 5.5556rem;
         }
 
+        input:focus{
+            outline: none;
+        }
+
+
         .textarea{
             display:inline-block;
             border: none;
@@ -219,8 +224,12 @@
             margin-left:5.5556rem;
         }
 
+        .textarea:focus{
+            outline: none;
+        }
+
         .btn {
-            font: normal normal normal 25px SourceSansPro-Black;
+            font: normal normal normal 1.3889rem SourceSansPro-Black;
             color: #FFFFFF;
             background-color:#060606;
             border: none;
@@ -242,7 +251,7 @@
         .column-1 {
             float: left;
             width: 25%;
-            padding-bottom:108px ;
+            padding-bottom:6rem ;
             padding-top:5.8333rem; 
                
         }  
@@ -303,6 +312,7 @@
             color:#F5A623;
             font-family:SourceSansPro-Black;
             float: left;
+            padding-right: 0.5556rem;
         }
 
         .subnew{
@@ -323,8 +333,11 @@
             padding-left: 0;
             margin-top: 0.5556rem;
             margin-left: 0px;
-            float: left;
-           
+            float: left;  
+        }
+
+        #e-mail-2:focus{
+            outline: none;
         }
 
         .Subscribelink{
@@ -334,7 +347,7 @@
             float: left;
             padding-top: 1rem;
             padding-right: 1.1111rem;
-            padding-left: 1px;
+            padding-left: 0.0556rem;
             border: none;
             background-color:#060606 ;
             float: left;
@@ -346,8 +359,8 @@
         }
 
         .arow {
-            width: 16px;
-            height: 8px;
+            width: 0.8889rem;
+            height: 0.4444rem;
             color:#FFFFFF;
             float:left;
             padding-top: 1.1111rem;  
@@ -408,17 +421,22 @@
             margin-top: 0;
             padding-top: 0;
             padding-bottom: 20px;
-            text-align: left; 
+            text-align: left;
         }   
 
         .col6{
-            width: 46%;
+            width: 50%;
             margin-left: 0;
             margin-top: 0;
             padding-top: 0;
             padding-bottom: 20px;
-            text-align: left; 
-        }   
+            text-align: left;
+        }  
+
+           .btn { 
+         margin-left:180px;
+         margin-bottom: 50px;
+        }
 
         }
 
@@ -426,6 +444,15 @@
             html{
                 font-size: 14px;
             }
+
+            .col6{
+            width: 60%;
+            margin-left: 0;
+            margin-top: 0;
+            padding-top: 0;
+            padding-bottom: 20px;
+            text-align: left;
+        }  
           
         }
         
@@ -433,12 +460,30 @@
             html{
                 font-size: 10px;
             }
+
+            .btn {
+            margin-left:100px;
+            margin-bottom: 20px;
+            }
           
         }
 
         @media screen and (max-width: 529px) {
             html{
                 font-size: 8px;
+            }
+
+            .col6{
+            width: 60%;
+            margin-left: 0;
+            margin-top: 0;
+            padding-top: 0;
+            padding-bottom: 20px;
+            text-align: left;
+            }  
+
+            .btn { 
+            margin-left:80px;
             }
           
         }
