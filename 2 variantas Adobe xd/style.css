@@ -323,7 +323,7 @@ html{
     flex-wrap: wrap;
     width: 100%;
     background-color: #FFFFFF;
-    
+    opacity: 0.8;
 }
 
 .list.active {
@@ -332,9 +332,8 @@ html{
 
 .toggle {
     position: absolute;
-    right: 0px;
+    right: 0;
     display:block;
-   
 }  
 
 a {
@@ -382,14 +381,7 @@ a:hover{
         font-size: 14px; 
         overflow-x: hidden ;
     }
-
-    .toggle {
-        top: 0.5882rem;
-        right:0px;
-        position: absolute;
-        
     }
-}
 
 @media all and (max-width: 1000px) {
 
@@ -397,14 +389,6 @@ a:hover{
         font-size: 12px; 
         overflow-x: hidden ;
     }
-
-    .toggle {
-        top: 0.5882rem;
-        right:0px;
-        position: absolute;
-       
-    }
-
     }
 
 
@@ -419,9 +403,14 @@ a:hover{
         width: 80%;
     }
 
+    .toggle {
+        position: absolute;
+        right: 0;
+        display:block;
+    }  
+
     .navbar2 {
     width: 100%;
-  
-}
+    }
 
-}
+    }
